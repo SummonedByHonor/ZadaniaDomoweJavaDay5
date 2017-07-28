@@ -28,4 +28,13 @@ public class Osoba {
         this.nazwisko = nazwisko;
         this.wiek = wiek;
     }
+
+    @Override
+    public String toString() {
+        return "Osoba{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", wiek=" + wiek +
+                '}';
+    }
 }

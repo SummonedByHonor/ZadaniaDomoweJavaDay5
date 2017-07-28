@@ -12,9 +12,9 @@ public class Slownik {
     private Map<String, List<Osoba>> osobyNaStanowisku = new HashMap<>();
 
     public  Map<String, List<Osoba>> stworzIndeksOsobNaJednymStanowisku(String stanowisko, List<Osoba> listaPracownikow) {
-
-        osobyNaStanowisku.put(stanowisko, listaPracownikow);
-        return osobyNaStanowisku;
+        Map<String, List<Osoba>> templateMap= new HashMap<>();
+        templateMap.put(stanowisko, listaPracownikow);
+        return templateMap;
 
     }
 

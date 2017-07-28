@@ -45,22 +45,22 @@ public class Main {
         Map<String, List<Osoba>> ksiegowosc = slownik.stworzIndeksOsobNaJednymStanowisku("Księgowość",
                 listaPracownikowKsiegowosc);
 
-        Map<String, Map<String, List<Osoba>>> dzialAdministracja = new HashMap<>();
-        dzialAdministracja.put("Administracja",kadry);
-        dzialAdministracja.put("Administracja",ksiegowosc);
+        Map<String, List<Osoba>> dzialAdministracja = new HashMap<>();
+        dzialAdministracja.put("Dział Kadr", listaPracownikowKadry);
+        dzialAdministracja.put("Księgowość", listaPracownikowKsiegowosc);
 
-        Map<String, Map<String, List<Osoba>>> dzialMagazyn = new HashMap<>();
-        dzialMagazyn.put("Magazyn", mlodsiMagazynierzy);
-        dzialMagazyn.put("Magazyn", magazynierzy);
+        Map<String, List<Osoba>> dzialMagazyn = new HashMap<>();
+        dzialMagazyn.put("Młodsi Magazynierzy", listaPracownikowMlodszyMagazynier);
+        dzialMagazyn.put("Magazynierzy", listaPracowynikowMagazynier);
 
-        for(Map.Entry entry : dzialAdministracja.entrySet()){
+        Map<String, Map<String, List<Osoba>>> firmaIndeksPracownikow = new HashMap<>();
+        firmaIndeksPracownikow.put("Administracja", dzialAdministracja);
+        firmaIndeksPracownikow.put("Magazyn", dzialMagazyn);
+
+        for(Map.Entry entry : firmaIndeksPracownikow.entrySet()){
             System.out.println(entry.getKey() + " " + entry.getValue());
 
         }
-
-//        for(Map.Entry entry : dzialMagazyn.entrySet()){
-//            System.out.println(entry.getKey() + " " + entry.getValue());
-//        }
 
     }
 }
